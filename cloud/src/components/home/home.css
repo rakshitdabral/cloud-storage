@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-home{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+}
+
+.container-home img{
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    
+}
+
+.welcome{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+
+}
+
+.main-title{
+    font-size: 3rem;
+    margin-top: 13rem;
+    margin-right: 30rem;
+    color: #242A41;
+    font-family: 'Manrope', sans-serif;
+    width: fit-content;
+}
+
+.subtitle{
+    color: #43495B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    width: fit-content;
+}
+.welcome button{
+    width: 10rem;
+    margin-top: 0.3rem;
+    border-radius: 100px;
+    border: none !important;
+    background-color: #7ED9E2;
+    color: white ;
+}
+
+.col1{
+    position: relative;
+}
+
+.card{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+}
+.pdf{
+    top: 450px;
+    left: 150px;
+    border: none;
+}
+.jpg{
+    top: 100px;
+    left: 130px;
+    border: none;
+}
+
+.gif{
+    top: 290px;
+    left: 280px;
+    border: none;
+}
+
+@media (max-width: 1199.20px) {
+    
+    .main-title{
+        font-size: 2.3rem;
+        margin-top: 8rem;
+        margin-right: 15rem;
+    }
+    
+    .subtitle{
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 840px){
+    .container-home{
+        height: fit-content
+    }
+    .main-title{
+        font-size: 1.5rem;
+        margin-top: 5rem;
+        margin-right: 15rem;
+    }
+    
+    .subtitle{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 660px){
+    .container-home{
+        height: fit-content
+    }
+    .main-title{
+        font-size: 1.2rem;
+        margin-top: 3rem;
+        margin-right: 15rem;
+    }
+    
+    .subtitle{
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 425px){
+    .container-home{
+        height: fit-content
+    }
+    .main-title{
+        font-size: 0.6rem;
+        margin-top: 1rem;
+        margin-right: 15rem;
+    }
+    
+    .subtitle{
+        font-size: 0.5rem;
+    }
+    .welcome button{
+        width: 10rem;
+        margin-top: 0.3rem;
+    }
+}
+
