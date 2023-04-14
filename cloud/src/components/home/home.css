@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 .container-home{
@@ -34,7 +35,7 @@
 .main-title{
     font-size: 3rem;
     margin-top: 13rem;
-    margin-right: 30rem;
+    margin-right: 40rem;
     color: #242A41;
     font-family: 'Manrope', sans-serif;
     width: fit-content;
@@ -55,8 +56,18 @@
     color: white ;
 }
 
+.row-one{
+    display: flex;
+    margin-left: 40px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    border-bottom: dashed 1px grey  !important;
+}
+
 .col1{
     position: relative;
+    width: 750px;
 }
 
 .card{
@@ -81,65 +92,387 @@
     border: none;
 }
 
-@media (max-width: 1199.20px) {
+.mp4{
+    top: 160px;
+    left: 480px;
+    border: none;
+}
+
+.txt{
+    top: 520px;
+    left: 480px;
+    border: none;
+}   
+
+.col2{
+    width: 500px;
+    font-size: 3rem;
+    margin-top: 12rem;
+    color: #242A41;
+    text-align: center;
+}
+
+.outer{
+    position: relative;
+    width: 1174.3px;
+    height: 347.96px;
+    top: 10rem;
+    background: #7DE0EA;
+    border-radius: 32px;
+    transform: rotate(-1.34deg);
+}
+
+.inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+    position: absolute;
+    width: 1169px;
+    height: 338px;
+    background-color: #583FBC;
+    border-radius: 32px;
+    transform: rotate(1.34deg);
+    overflow: hidden;
+}
+
+.linetwo{
+    position: relative;
+    width: 1169px;
+    height: 338px;
+}
+
+.small-box{
+    position: absolute;
+    width: fit-content;
+    left: 3rem;
+}
+.side-box{
+    position: absolute;
+    left: 50rem;
+    top: 8rem;
+    width: fit-content;
+}
+
+.title-2{
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    margin-top: 5rem;
+}
+
+.subtitle-2{
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+}
+
+.price-button{
+    background-color: #7DE0EA;
+    color: #fff;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+}
+
+.row-faq{
+    margin-top: 20rem;
+}
+
+#footer{
+    margin-top: 7rem;
+    border-top: dashed 1px grey;
+}
+@media (max-width: 1200px) {
     
     .main-title{
         font-size: 2.3rem;
-        margin-top: 8rem;
+        margin-top: 10rem;
         margin-right: 15rem;
     }
     
     .subtitle{
         font-size: 1.4rem;
     }
+    
+    
 }
 
-@media (max-width: 840px){
+@media (max-width: 992px){
     .container-home{
         height: fit-content
     }
     .main-title{
         font-size: 1.5rem;
-        margin-top: 5rem;
+        margin-top: 9rem;
         margin-right: 15rem;
     }
     
     .subtitle{
         font-size: 1.1rem;
     }
+    .small-box{
+        left: 3rem;
+        width: 25rem;
+    }
+    .side-box{
+        left: 28rem;
+        top: 8rem;
+
+    }
+    
+    .title-2{
+        font-size: 1.4rem;
+        margin-top: 5rem;
+    }
+    
+    .subtitle-2{
+        font-size: 1rem;
+    }
+    
+    .price-button{
+        font-size: 1.3rem;
+        border-radius: 1rem;
+    }
 }
 
-@media (max-width: 660px){
+@media (max-width: 768px){
     .container-home{
         height: fit-content
     }
     .main-title{
         font-size: 1.2rem;
-        margin-top: 3rem;
-        margin-right: 15rem;
+        margin-top: 4rem;
+        margin-right: 16rem;
     }
     
     .subtitle{
-        font-size: 0.8rem;
+        font-size: 1rem;
+    }
+    .card{
+        height: 50px;
+        width: 50px;
+    }
+    .col1{
+        width: 350px;
+    }
+    .ellipse{
+        height: 350px;
+        width: 350px;
+    }
+    .pdf{
+        top: 230px;
+        left: 120px;
+        border: none;
+    }
+    .jpg{
+        top: 60px;
+        left: 80px;
+        border: none;
+    }
+    
+    .gif{
+        top: 150px;
+        left: 160px;
+        border: none;
+    }
+    
+    .mp4{
+        top: 90px;
+        left: 240px;
+        border: none;
+    }
+    
+    .txt{
+        top: 240px;
+        left: 260px;
+        border: none;
+    }
+    .col2{
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .small-box{
+        left: 3rem;
+        width: 20rem;
+    }
+    .side-box{
+        left: 22rem;
+        top: 8rem;
+
     }
 }
 
-@media (max-width: 425px){
+@media (max-width: 576px){
     .container-home{
         height: fit-content
     }
     .main-title{
-        font-size: 0.6rem;
-        margin-top: 1rem;
-        margin-right: 15rem;
+        font-size: 1rem;
+        margin-top: 0.2rem;
+        margin-right: 18rem;
     }
     
     .subtitle{
-        font-size: 0.5rem;
+        font-size: 0.9rem;
     }
     .welcome button{
         width: 10rem;
         margin-top: 0.3rem;
     }
+    .card{
+        height: 50px;
+        width: 50px;
+    }
+    .col1{
+        width: 350px;
+    }
+    .ellipse{
+        height: 350px;
+        width: 300;
+        
+    }
+    .pdf{
+        top: 230px;
+        left: 120px;
+        border: none;
+    }
+    .jpg{
+        top: 60px;
+        left: 80px;
+        border: none;
+    }
+    
+    .gif{
+        top: 150px;
+        left: 160px;
+        border: none;
+    }
+    
+    .mp4{
+        top: 90px;
+        left: 240px;
+        border: none;
+    }
+    
+    .txt{
+        top: 240px;
+        left: 260px;
+        border: none;
+    }
+    .col2{
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        width: auto;
+        text-align: center;
+    }
+    .small-box{
+        left: 2rem;
+        width: 10rem;
+    }
+    .side-box{
+        left: 12rem;
+        top: 8rem;
+
+    }
+    .outer{
+        width: 22rem;
+        height: 338.96px;
+        top: 10rem;
+    }
+    
+    .inner{
+        width: 21rem;
+        height: 337px;
+    }
 }
 
+@media (max-width: 374px) {
+    .main-title{
+        font-size: 0.5rem;
+        margin-top: 0.2rem;
+        margin-right: 12rem;
+    }
+    
+    .subtitle{
+        font-size: 0.4rem;
+    }
+    .welcome button{
+        width: 6rem;
+        margin-top: 0.3rem;
+        font-size: 0.3rem;
+    }
+    .col1{
+        width: 300px;
+    }
+    .card{
+        height: 35px;
+        width: 35px;
+    }
+    .ellipse{
+        height: 300px;
+        width: 200px;
+        
+    }
+    .pdf{
+        top: 180px;
+        left: 70px;
+    }
+    .jpg{
+        top: 80px;
+        left: 40px;
+    }
+    
+    .gif{
+        top: 130px;
+        left: 90px;
+    }
+    
+    .mp4{
+        top: 90px;
+        left: 130px;
+    }
+    
+    .txt{
+        top: 180px;
+        left: 150px;
+    }
+    .col2{
+        font-size: 0.6rem;
+        margin-top: 2rem;
+        width: auto;
+        text-align: center;
+    }
+    .outer{
+        width: 18rem;
+        height: 301.96px;
+        top: 10rem;
+    }
+    
+    .inner{
+        width: 17rem;
+        height: 300px;
+    }
+    .title-2{
+        font-size: 1rem;
+    }
+    
+    .subtitle-2{
+        font-size: 0.7rem;
+    }
+    
+    .price-button{
+        font-size: 0.9rem;
+        border-radius: 1rem;
+    }
+    .small-box{
+        left: 1rem;
+        width: 7rem;
+    }
+    .side-box{
+        left: 8rem;
+        top: 8rem;
+
+    }
+}   

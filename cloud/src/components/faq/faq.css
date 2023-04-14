@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.row{
+    display: flex;
+}
+.col-faq-1{
+    width: 30rem;
+    left: 1rem;
+}
+.col-faq-2{
+    width: fit-content;
+}
+.accordion{
+    width: 25rem;
+    left: 45rem;
+}
+
+.accordion-body{
+    background-color: #EDF0F9;
+}
+#title{
+    font-size: 1rem;
+    color: #2CCCC8;
+}
+#heading{
+    font-size: 3rem;
+}
+#heading strong{
+    color: #7DE0EA;
+}
+
+@media (max-width: 576px){
+    .accordion{
+        margin-top: 3rem;
+        width: 10rem;
+        
+    }
+}
+
+@media (max-width: 995px){
+    .accordion{
+        margin-top: 3rem;
+        width: 15rem;
+       
+    }
+}
+
