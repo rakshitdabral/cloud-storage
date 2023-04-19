@@ -1,4 +1,6 @@
 import React from "react";
+import Navbar from '../navbar/Navbar'
+import {Link} from "react-router-dom";
 import Footer from "../footer/Footer"
 import image_home from "./images/Top.svg";
 import image_ellipse from "./images/Ellipse.svg";
@@ -17,13 +19,16 @@ import Faqmain from "../faq/Faqmain"
 function Home() {
   return (
     <>
+    <Navbar/>
       <div className="container-fluid container-home">
       <div className="welcome container-lg">
         <p className="main-title">Welcome to <strong><bold>CLOUD'O</bold></strong></p>
         <p className="subtitle">A free cloud storage solution</p>
+        <Link to="/getstarted">
         <button class="btn btn-outline-success" type="submit">
                         Get Started <FiArrowRight/>
                       </button>
+                      </Link>
       </div>
       
         <img  className="lines" src={image_home} alt="lines" />

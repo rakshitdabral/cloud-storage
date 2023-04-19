@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "../navbar/navbar.css";
 import { FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -12,9 +13,7 @@ function Navbar() {
           <div className="col-10 mx-auto">
             <nav class="navbar navbar-expand-lg ">
               <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                  CLOUD'O
-                </a>
+                <Link class="nav-link active" aria-current="page" to="/" >CLOUD'O</Link>
                 <button
                   class="navbar-toggler"
                   type="button"
@@ -32,24 +31,26 @@ function Navbar() {
                 >
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/">
+                      <Link class="nav-link active" aria-current="page" to="/">
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/">
+                      <Link class="nav-link" to="/about">
                         About
-                      </a>
+                      </Link>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/">
+                      <Link class="nav-link" to="/prices">
                         Prices
-                      </a>
+                      </Link>
                     </li>
                     <li class="nav-item">
+                    <Link to="/getstarted">
                       <button class="btn btn-outline-success" type="submit">
                         Get Started <FiArrowRight/>
                       </button>
+                      </Link>
                     </li>
                   </ul>
                 </div>

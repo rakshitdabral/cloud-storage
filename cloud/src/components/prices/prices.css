@@ -6,11 +6,11 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    
 }
-
-.row{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5rem;
+.bg{
+    background-image: url("./images/Lines2.png");
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
 }

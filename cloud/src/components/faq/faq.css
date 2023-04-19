@@ -38,7 +38,7 @@
 
 @media (max-width: 576px){
     .accordion{
-        margin-top: 3rem;
+        
         width: 10rem;
         
     }
@@ -46,7 +46,7 @@
 
 @media (max-width: 995px){
     .accordion{
-        margin-top: 3rem;
+        
         width: 15rem;
        
     }

@@ -6,10 +6,10 @@ function Footer(){
         <>
             <div className="container row">
                 <div className="col-1">
-                    sadasdasd
+                    made with ?
                 </div>
                 <div className="col-2">
-asdasdasd
+                    something else here
                 </div>
             </div>
         </>
