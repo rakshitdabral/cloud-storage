@@ -1,18 +1,76 @@
 import React from "react";
 import "./getstarted.css";
 import { FcGoogle } from "react-icons/fc";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import Bgimage from "./images/bg.jpg";
 
 function GetStarted() {
   return (
     <>
-        <section className="form-group">
-            <div className="container-fluid form-ui">
-                    <div className="container  form-col1">  
-                    <button type="button" class="btn btn-light btn-lg btn-outline-info button-login"><FcGoogle/>    Login with Google</button>
-                    </div>
+      <div className="container-fluid row form-ui g-0">
+        <div className="col g-0 leftside">
+          <div className="container form-ui-box">
+            <h1><strong>Login</strong></h1>
+            <p className="subtitle-one">Unlock your world with just a click - log in now!</p>
+            <button type="button" class="btn btn-light button-signin">
+              <FcGoogle/>  <strong className="sign-in-text">Sign in with Google</strong>
+            </button>
+            <h6>
+              <span>or Sign in with Email</span>
+            </h6>
+
+            <form className="form">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">
+                  <strong>Email*</strong>
+                </label>
+                <input
+                  type="email"
+                  class="form-control form-ct"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="mail@website.com"
+                ></input>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                  <strong>Password*</strong>
+                </label>
+                <input
+                  type="password"
+                  class="form-control form-ct"
+                  id="exampleInputPassword1"
+                  placeholder="Min. 8 character"
+                ></input>
+                
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                ></input>
+                <label class="form-check-label" for="exampleCheck1">
+                 <strong>Remember me</strong>
+                </label>
+                <a href="/" className="forgot"><strong>Forgot password?</strong></a>
+              </div>
+              <button type="submit" class="btn btn-primary btn-login">
+                Login
+              </button>
+              <div class="mb=3">
+                <p>Not registered yet?<a href="/" className="create"><strong>Create an Account</strong></a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="col g-0 rightside">
+        <div className="container image-bg">
+             <img className="image-right" src={Bgimage }alt="sharing" />  
             </div>
-        </section>
+        </div>  
+      </div>
     </>
   );
 }

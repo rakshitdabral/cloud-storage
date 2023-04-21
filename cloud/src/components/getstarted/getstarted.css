@@ -9,30 +9,123 @@
 }
 
 .form-ui{
-    width: 100vw;
+    display: flex;
+    gap: 0;
+}
+
+.leftside , .rightside {
     height: 100vh;
-    position: relative;
-    background-image: url("./images/bg.jpg");
-    object-fit: contain;
-    background-repeat: none;
+    width: 100%;
 }
 
-.form-col1{
-    position: absolute;
-    height: 600px;
-    width: 500px;
-    top: 4rem;
-    left:470px;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+h1{
+    margin-bottom: 1rem;
 }
 
-.form-col1 button{
-    margin-left: 100px;
-    margin-top: 3rem;
+.subtitle-one{
+    color: #6878AC;
+    margin-bottom: 3rem;
+}
+.sign-in-text{
+    margin-left: 10px;
+}
+.button-signin{
+    color: black;
+    background-color: white;
+    border: 1px solid grey;
+    width: 100%;
+    margin-bottom : 2rem;
+    border-radius: 3rem;
+    height: 3.5rem;
 }
 
+.form-ct{
+    width: 100%;
+    border-radius: 3rem;
+    height: 3.5rem;  
+    margin-bottom: 1.5rem; 
+}
+
+#exampleCheck1:checked{
+    background-color: #583FBC;
+}
+#exampleCheck1:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.create{
+    text-decoration: none;
+    color: #583FBC;
+    margin-left: 10px;
+}
+.forgot{
+    float: right;
+    text-decoration: none;
+    color: #583FBC;
+}
+
+.btn-login{
+    border-radius: 3rem;
+    height: 3.5rem;
+    background-color:#583FBC;
+    width: 100%;
+    outline: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+::placeholder{
+    padding-left: 1rem;
+}
+
+.leftside {
+    background-color: #fff;
+}
+
+.image-bg{
+    height: inherit;
+}
+.image-right{
+    width: 100%;
+    height: 100%;
+}
+
+.form-ui-box{
+    margin-top: 8rem;
+    width: 30rem;
+    height: 40rem;
+}
+
+h6 {
+    width: 100%; 
+    color: grey;
+    text-align: center; 
+    border-bottom: 1px solid grey; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+ h6 span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
+
+@media screen and (max-width: 883px){
+    .form-ui{
+        display: inline-block;
+    }
+    .form-ui-box{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .rightside{
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width:425px){
+    .rightside{
+        display: none;
+    }
+}
