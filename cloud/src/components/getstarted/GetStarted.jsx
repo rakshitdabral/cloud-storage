@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./getstarted.css";
 import { FcGoogle } from "react-icons/fc";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Bgimage from "./images/bg.jpg";
+import { signInWithEmailAndPassword} from 'firebase/auth'
+import {auth} from  "../firebaseConfig"
+
 
 function GetStarted() {
+  const [loginEmail, setLoginEmail] = useState("")
+  const [loginPassword, setLoginPassword] = useState("")
+
+
+
+  const login = async()=>{
+        try{
+           const user = await signInWithEmailAndPassword(auth, loginEmail,loginPassword);
+        }catch(error){
+          console.log(error.message);
+        }
+
+  }
+
   return (
     <>
       <div className="container-fluid row form-ui g-0">
@@ -31,6 +48,9 @@ function GetStarted() {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="mail@website.com"
+                  onChange={(event)=>{
+                    setLoginEmail(event.target.value)
+                  }}
                 ></input>
               </div>
               <div class="mb-3">
@@ -42,6 +62,9 @@ function GetStarted() {
                   class="form-control form-ct"
                   id="exampleInputPassword1"
                   placeholder="Min. 8 character"
+                  onChange={(event)=>{
+                    setLoginPassword(event.target.value)
+                  }}
                 ></input>
                 
               </div>
@@ -56,7 +79,7 @@ function GetStarted() {
                 </label>
                 <a href="/" className="forgot"><strong>Forgot password?</strong></a>
               </div>
-              <button type="submit" class="btn btn-primary btn-login">
+              <button type="submit" class="btn btn-primary btn-login"  onClick={login}>
                 Login
               </button>
               <div class="mb=3">
