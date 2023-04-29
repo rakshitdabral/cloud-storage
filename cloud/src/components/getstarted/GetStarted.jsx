@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Bgimage from "./images/bg.jpg";
 import { signInWithEmailAndPassword} from 'firebase/auth'
-import {auth} from  "../firebaseConfig"
+import { auth } from "../../essential/firebase-config";
 
 
 function GetStarted() {
