@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from '../navbar/Navbar'
 import {Link} from "react-router-dom";
 import Footer from "../footer/Footer"
-import image_home from "./images/bg.png";
+import image_home from "./images/top.png";
 import image_ellipse from "./images/Ellipse.svg";
 import image_pdf from "./images/PDF.png";
 import image_jpg from "./images/JPG.png";
