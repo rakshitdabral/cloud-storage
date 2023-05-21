@@ -4,23 +4,28 @@ import { FcGoogle } from "react-icons/fc";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Bgimage from "./images/bg.jpg";
-import { signInWithEmailAndPassword} from 'firebase/auth'
-import { auth } from "../../essential/firebase-config";
+import { signInWithEmailAndPassword,signInWithPopup} from 'firebase/auth'
+import { auth , googleProvider } from "../../essential/firebase-config";
 
 
 function GetStarted() {
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
 
-
-
   const login = async()=>{
-        try{
-           const user = await signInWithEmailAndPassword(auth, loginEmail,loginPassword);
-        }catch(error){
-          console.log(error.message);
-        }
+        await signInWithEmailAndPassword(auth,loginEmail,loginPassword);
+        
+  }
 
+  const signInWithGoogle = async()=>{
+    try{
+      await signInWithPopup(auth, googleProvider);
+    }catch(err){
+      console.error(err);
+    }
+
+  
+    
   }
 
   return (
@@ -30,7 +35,7 @@ function GetStarted() {
           <div className="container form-ui-box">
             <h1><strong>Login</strong></h1>
             <p className="subtitle-one">Unlock your world with just a click - log in now!</p>
-            <button type="button" class="btn btn-light button-signin">
+            <button onClick={signInWithGoogle} type="button" className="btn btn-light button-signin">
               <FcGoogle/>  <strong className="sign-in-text">Sign in with Google</strong>
             </button>
             <h6>
@@ -38,13 +43,13 @@ function GetStarted() {
             </h6>
 
             <form className="form">
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">
+              <div className="mb-3">
+                <label for="exampleInputEmail1" className="form-label">
                   <strong>Email*</strong>
                 </label>
                 <input
                   type="email"
-                  class="form-control form-ct"
+                  className="form-control form-ct"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="mail@website.com"
@@ -53,8 +58,8 @@ function GetStarted() {
                   }}
                 ></input>
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">
+              <div className="mb-3">
+                <label for="exampleInputPassword1" className="form-label">
                   <strong>Password*</strong>
                 </label>
                 <input
@@ -68,13 +73,13 @@ function GetStarted() {
                 ></input>
                 
               </div>
-              <div class="mb-3 form-check">
+              <div className="mb-3 form-check">
                 <input
                   type="checkbox"
-                  class="form-check-input"
+                  className="form-check-input"
                   id="exampleCheck1"
                 ></input>
-                <label class="form-check-label" for="exampleCheck1">
+                <label className="form-check-label" for="exampleCheck1">
                  <strong>Remember me</strong>
                 </label>
                 <a href="/" className="forgot"><strong>Forgot password?</strong></a>

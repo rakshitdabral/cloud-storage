@@ -25,7 +25,7 @@ function Home() {
         <p className="main-title">Welcome to <strong><bold>CLOUD'O</bold></strong></p>
         <p className="subtitle">A free cloud storage solution</p>
         <Link to="/getstarted">
-        <button class="btn btn-outline-success" type="submit">
+        <button className="btn btn-outline-success" type="submit">
                         Get Started <FiArrowRight/>
                       </button>
                       </Link>
@@ -61,7 +61,7 @@ function Home() {
                     <p className="subtitle-2">If you are not happy with my performance, you can ask for refund</p>
                 </div>
                 <div className="container side-box">
-                <button class="btn btn-outline-success price-button" type="submit">
+                <button className="btn btn-outline-success price-button" type="submit">
                         Prices <FiArrowRight/>
                       </button>
                 </div>
