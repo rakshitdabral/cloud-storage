@@ -9,6 +9,7 @@ import { auth , googleProvider } from "../../essential/firebase-config";
 
 
 function GetStarted() {
+  const user = auth.currentUser;
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
 
@@ -23,11 +24,11 @@ function GetStarted() {
     }catch(err){
       console.error(err);
     }
-
-  
-    
   }
 
+  if(user!=null){
+    localStorage.setItem("user", user.uid)
+  }
   return (
     <>
       <div className="container-fluid row form-ui g-0">
