@@ -3,3 +3,76 @@
     padding: 0;
     box-sizing: border-box;
 }
+.header{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 300px auto 200px;
+    padding: 5px 20px;
+    height: 60px;
+    border-bottom: 1px solid lightgrey;
+}
+.headerLogo{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+.headerLogo span{
+    font-size: 22px;
+    margin-left: 10px;
+}
+.options{
+    display: flex;
+    align-items: center;
+}
+.account{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+.optionIcons{
+    height: 25px;
+    width: 25px;
+}
+.user{
+    height: 40px;
+    width: 40px;
+}
+
+.options span{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    width: 700px;
+    background-color: whitesmoke;
+    padding: 12px;
+    border-radius: 10px;
+}
+.searchBar input{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    flex: 1;
+}
+
+@media only screen and (max-width: 1250px) {
+    .searchBar{
+        width: 500px;
+    }
+  }
+
+  @media only screen and (max-width: 1055px) {
+    .searchBar{
+        width: 400px;
+    }
+  }
+
+  @media only screen and (max-width: 960px) {
+    .searchBar{
+        width: 300px;
+    }
+  }

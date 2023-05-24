@@ -3,36 +3,38 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./ui.css";
 import ReactDOM from 'react-dom'
-  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass,faCircleQuestion,faCircleUser,faGear, faListUl ,faSliders} from '@fortawesome/free-solid-svg-icons'
 
 function Ui() {
+
+    const logOut = async()=>{
+        localStorage.removeItem('user');
+    }
+
+
   return (
     <>
-      <div class="container-fluid dashboard ">
-  <div class="row">
-    <div class="col">
-      CLOUD'O
-    </div>
-    <div class="col-lg-8 col-sm-5">
-      2 of 3 (wider)
-    </div>
-    <div class="col">
-      3 of 3
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      1 of 3
-    </div>
-    <div class="col-lg-8 col-sm-5">
-      2 of 3 (wider)
-    </div>
-    <div class="col">
-      3 of 3
-    </div>
-  </div>
-</div>
+      <div className="header">
+        <div className="headerLogo">
+            <strong>CLOUD'O</strong>
+            <span></span>
+        </div>
+        <div className="searchBar">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <input type="text" placeholder="search for your item"></input>
+            <FontAwesomeIcon icon={faSliders} />
+        </div>
+        <div className="options">
+        <FontAwesomeIcon className="optionIcons" icon={faCircleQuestion} />
+        <span></span>
+        <FontAwesomeIcon className="optionIcons" icon={faGear} />
+        <span></span>
+        <FontAwesomeIcon className="optionIcons" icon={faListUl} />
+        <span></span>
+        <button className="account" onClick={logOut}><FontAwesomeIcon className="optionIcons user" icon={faCircleUser} /></button>
+        </div>
+      </div>
     </>
   );
 }
