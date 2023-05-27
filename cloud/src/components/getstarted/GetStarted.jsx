@@ -7,14 +7,14 @@ import Ui from "../ui/Ui"
 import Bgimage from "./images/bg.jpg";
 import { signInWithEmailAndPassword,signInWithPopup} from 'firebase/auth'
 import { auth , googleProvider } from "../../essential/firebase-config";
-import {Navigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 function GetStarted() {
   const user = auth.currentUser
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
-  
+  const navigate = useNavigate();
 
   const login = async()=>{
         await signInWithEmailAndPassword(auth,loginEmail,loginPassword);
@@ -27,11 +27,14 @@ function GetStarted() {
     }catch(err){
       console.error(err);
     }
+    
+    if(user!=null){
+      localStorage.setItem('user', user);
+      navigate("/cloudo/my-cloud", {replace: true})
+    }
   }
 
-  if(user!=null){
-    localStorage.setItem("user", user.uid);
-  }
+  
   return (
     <>
       <div className="container-fluid row form-ui g-0">

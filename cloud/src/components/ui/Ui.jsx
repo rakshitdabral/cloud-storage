@@ -3,13 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./ui.css";
 import ReactDOM from 'react-dom'
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass,faCircleQuestion,faCircleUser,faGear, faListUl ,faSliders} from '@fortawesome/free-solid-svg-icons'
 
 function Ui() {
-
+    const navigate = useNavigate();
     const logOut = async()=>{
         localStorage.removeItem('user');
+        navigate("/",{replace:true});
     }
 
 

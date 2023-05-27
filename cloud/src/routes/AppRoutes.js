@@ -9,7 +9,7 @@ import Protected from '../components/protected/Protected';
 
 export default function AppRoutes() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() =>{
     let isTokenPresent = localStorage.getItem('user')
     setIsLoggedIn(isTokenPresent)
@@ -17,15 +17,8 @@ export default function AppRoutes() {
   return (
     <>
         <Routes>
-          {
-            isLoggedIn ? <>
-            <Route exact path="/cloudo/my-cloud" element={<Ui/>} />
-            </> : 
-            <>
-              console.log(error)
-            </>
-          }
-          <Route exact path="/getstarted" element={<GetStarted/>} />
+          <Route exact path="/getStarted" element={<GetStarted/>}/>
+          <Route exact path="/cloudo/my-cloud" element={<Ui/>} />
           <Route exact path="/" element={<Home/>}  />
           <Route exact path="/prices" element={<Prices/>}  />
         </Routes>
