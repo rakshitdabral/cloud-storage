@@ -3,15 +3,18 @@ import "./getstarted.css";
 import { FcGoogle } from "react-icons/fc";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import Ui from "../ui/Ui"
 import Bgimage from "./images/bg.jpg";
 import { signInWithEmailAndPassword,signInWithPopup} from 'firebase/auth'
 import { auth , googleProvider } from "../../essential/firebase-config";
+import {Navigate} from "react-router-dom";
 
 
 function GetStarted() {
-  const user = auth.currentUser;
+  const user = auth.currentUser
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
+  
 
   const login = async()=>{
         await signInWithEmailAndPassword(auth,loginEmail,loginPassword);
@@ -21,14 +24,13 @@ function GetStarted() {
   const signInWithGoogle = async()=>{
     try{
       await signInWithPopup(auth, googleProvider);
-      
     }catch(err){
       console.error(err);
     }
   }
 
   if(user!=null){
-    localStorage.setItem("user", user.uid)
+    localStorage.setItem("user", user.uid);
   }
   return (
     <>

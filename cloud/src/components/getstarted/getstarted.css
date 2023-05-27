@@ -129,3 +129,9 @@ h6 {
         display: none;
     }
 }
+
+@media screen and (min-width:1024px){
+    .form-ui-box{
+        margin-top: 100px;
+    }
+}

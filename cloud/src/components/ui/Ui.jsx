@@ -36,7 +36,7 @@ function Ui() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export default Ui;
