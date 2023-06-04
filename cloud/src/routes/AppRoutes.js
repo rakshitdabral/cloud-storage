@@ -5,7 +5,7 @@ import Ui from '../components/ui/Ui'
 import Home from '../components/home/Home'
 import Prices from "../components/prices/Prices"
 import GetStarted from "../components/getstarted/GetStarted";
-import Protected from '../components/protected/Protected';
+import Signup from "../components/signup/Signup"
 
 export default function AppRoutes() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -17,6 +17,9 @@ export default function AppRoutes() {
   return (
     <>
         <Routes>
+        {
+          isLoggedIn?navigate("/cloudo/my-cloud",{replace:true}):<Route exact path="/getStarted" element={<GetStarted/>}/>
+        }
           <Route exact path="/getStarted" element={<GetStarted/>}/>
           <Route exact path="/cloudo/my-cloud" element={<Ui/>} />
           <Route exact path="/" element={<Home/>}  />

@@ -12,6 +12,7 @@ import {useNavigate} from "react-router-dom";
 
 function GetStarted() {
   const user = auth.currentUser
+  
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ function GetStarted() {
     }
     
     if(user!=null){
-      localStorage.setItem('user', user);
+      localStorage.setItem('user', user.uid);
       navigate("/cloudo/my-cloud", {replace: true})
     }
   }
