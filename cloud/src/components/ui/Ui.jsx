@@ -24,7 +24,7 @@ function Ui() {
         </div>
         <div className="searchBar">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
-            <input type="text" placeholder="search for your item"></input>
+            <input  type="text" placeholder="search for your item"></input>
             <FontAwesomeIcon icon={faSliders} />
         </div>
         <div className="options">

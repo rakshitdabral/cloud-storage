@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 .header{
-    display: grid;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     grid-template-columns: 300px auto 200px;
     padding: 5px 20px;
     height: 60px;
@@ -57,22 +58,6 @@
     border: 0;
     outline: 0;
     flex: 1;
+    margin-left: 10px;
 }
 
-@media only screen and (max-width: 1250px) {
-    .searchBar{
-        width: 500px;
-    }
-  }
-
-  @media only screen and (max-width: 1055px) {
-    .searchBar{
-        width: 400px;
-    }
-  }
-
-  @media only screen and (max-width: 960px) {
-    .searchBar{
-        width: 300px;
-    }
-  }
