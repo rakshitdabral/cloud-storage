@@ -37,6 +37,7 @@ function Ui() {
         <button className="account" onClick={logOut}><FontAwesomeIcon className="optionIcons user" icon={faCircleUser} /></button>
         </div>
       </div>
+      <button>Add</button>
     </>
   )
 }
