@@ -92,7 +92,7 @@ h1{
 }
 
 .form-ui-box{
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     width: 30rem;
     height: 40rem;
 }
@@ -130,8 +130,11 @@ h6 {
     }
 }
 
-@media screen and (min-width:1024px){
+@media screen and (max-width:1024px){
     .form-ui-box{
-        margin-top:30px;
+        margin-top:6rem;
+    }
+    .rightside{
+        display: none;
     }
 }

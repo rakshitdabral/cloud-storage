@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./getstarted.css";
 import { FcGoogle } from "react-icons/fc";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import Ui from "../ui/Ui"
 import Bgimage from "./images/bg.jpg";
 import { signInWithEmailAndPassword,signInWithPopup} from 'firebase/auth'
 import { auth , googleProvider } from "../../essential/firebase-config";
 import {useNavigate} from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 
 
 function GetStarted() {
-  const user = auth.currentUser
-  
+  const {authDispatcher, userAuth} = useContext(AuthContext);
+  const user = auth.currentUser;
   const [loginEmail, setLoginEmail] = useState("")
   const [loginPassword, setLoginPassword] = useState("")
   const navigate = useNavigate();
 
+  
   const login = async()=>{
         await signInWithEmailAndPassword(auth,loginEmail,loginPassword);
         
@@ -24,15 +25,21 @@ function GetStarted() {
 
   const signInWithGoogle = async()=>{
     try{
-      await signInWithPopup(auth, googleProvider);
-    }catch(err){
+      const resp = await signInWithPopup(auth, googleProvider);
+      const user = {'userId': resp.user.uid, 'email': resp.user.email, 'name': resp.user.displayName, 'profilePic':resp.user.photoURL}
+      authDispatcher('LOGIN', user);
+      localStorage.setItem('user', JSON.stringify(user));
+      navigate("/cloudo/my-cloud", {replace: true})
+  }catch(err){
       console.error(err);
     }
     
-    if(user!=null){
-      localStorage.setItem('user', user.uid);
-      navigate("/cloudo/my-cloud", {replace: true})
-    }
+    // if(user!=null){
+    //   localStorage.setItem('user', user.uid);
+    //   navigate("/cloudo/my-cloud", {replace: true})
+    // }else{
+    //   navigate("/", {replace: true})
+    // }
   }
 
   

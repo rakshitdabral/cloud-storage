@@ -1,18 +1,45 @@
-import React from "react";
+import React, { useState, useLayoutEffect,useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./ui.css";
-import ReactDOM from 'react-dom'
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass,faCircleQuestion,faCircleUser,faGear, faListUl ,faSliders} from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass,faCircleQuestion,faCircleUser,faGear, faListUl ,faSliders,faPlus} from '@fortawesome/free-solid-svg-icons'
+import { collection, addDoc } from "firebase/firestore"; 
+import { db } from "../../essential/firebase-config";
+import { AuthContext } from "../../context/AuthContext";
 
 function Ui() {
+    const {authDispatcher, userAuth} = useContext(AuthContext)
+    const [user, setUser] = useState('')
     const navigate = useNavigate();
+
+    useLayoutEffect(()=>{
+      setUser(localStorage.getItem('user'))
+    },[])
+
     const logOut = async()=>{
-        localStorage.removeItem('user');
-        navigate("/",{replace:true});
+      // localStorage.removeItem('user');
+      await authDispatcher('LOGOUT')
+      navigate("/",{replace:true}); 
     }
+    
+    const handleClickAdd = async ()=>{
+      try {
+        const docRef = await addDoc(collection(db, "test"), {
+          first: "Ada",
+          last: "Lovelace",
+          born: 1815
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
+  
+
+    const [btnClick,setClick] = useState(false);
+
 
 
   return (
@@ -37,7 +64,15 @@ function Ui() {
         <button className="account" onClick={logOut}><FontAwesomeIcon className="optionIcons user" icon={faCircleUser} /></button>
         </div>
       </div>
-      <button>Add</button>
+      <div className="ui-body-container">
+        <div className="ui-body-side-bar">
+          <button className="response-button dropdown-button" onClick={handleClickAdd}><FontAwesomeIcon className="plus-icon" icon={faPlus} /> New</button>
+          
+        </div>
+        <div className="ui-body-main-wrapper">
+          
+        </div>
+      </div>
     </>
   )
 }

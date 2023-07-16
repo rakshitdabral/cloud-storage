@@ -1,30 +1,63 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useLayoutEffect, useState} from 'react'
 import {Route, Routes, useNavigate} from "react-router-dom";
-
 import Ui from '../components/ui/Ui'
 import Home from '../components/home/Home'
 import Prices from "../components/prices/Prices"
 import GetStarted from "../components/getstarted/GetStarted";
-import Signup from "../components/signup/Signup"
+import {AuthContext} from '../context/AuthContext';
 
 export default function AppRoutes() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const navigate = useNavigate();
-  useEffect(() =>{
-    let isTokenPresent = localStorage.getItem('user')
-    setIsLoggedIn(isTokenPresent)
-  }, [])
+  const [userAuth, setUserAuth] = useState({'userId': '', 'email':'', 'name':'', 'profilePic':'','isLoggedIn': false});
+  // const navigate = useNavigate();
+  
+  useLayoutEffect(() =>{
+    let user = localStorage.getItem('user')
+    if(user){
+      setUserAuth({...JSON.parse(localStorage.getItem('user')),'isLoggedIn':true});
+    }else{
+      localStorage.removeItem('user');
+    }
+  }, []);
+  
+  const authDispatcher = (actionType, actionPayload) => {
+    switch(actionType) {
+      case 'LOGIN':{
+        const { userId, email, name, profilePic  } = actionPayload;
+        setUserAuth({'userId': userId, 'email': email, 'name': name, 'profilePic':profilePic,'isLoggedIn': true});
+        break;
+      }
+
+      case 'LOGOUT':{
+        setUserAuth({'userId': '', 'email': '', 'name': '', 'profilePic':'','isLoggedIn': false});
+        localStorage.removeItem('user')
+        break;
+      }
+
+      default:{
+        setUserAuth({'userId': '', 'isLoggedIn': false});
+      }
+    }
+  }
+  
   return (
-    <>
+    <AuthContext.Provider value={{userAuth, authDispatcher}}>
         <Routes>
         {
-          isLoggedIn?navigate("/cloudo/my-cloud",{replace:true}):<Route exact path="/getStarted" element={<GetStarted/>}/>
+          userAuth.isLoggedIn?
+            <>
+              <Route path="*" element={<Ui/>} />
+              {/* <Route exact path="*" element={<Ui/>} /> */}
+            </>
+          :
+            <>
+              <Route exact path="/getStarted" element={<GetStarted/>}/>
+              {/* <Route exact path="/" element={<Home/>}  /> */}
+              <Route exact path="/prices" element={<Prices/>}  />
+              <Route  path="*" element={<Home/>} />
+
+            </>
         }
-          <Route exact path="/getStarted" element={<GetStarted/>}/>
-          <Route exact path="/cloudo/my-cloud" element={<Ui/>} />
-          <Route exact path="/" element={<Home/>}  />
-          <Route exact path="/prices" element={<Prices/>}  />
         </Routes>
-    </>
+    </AuthContext.Provider>
   )
 }
