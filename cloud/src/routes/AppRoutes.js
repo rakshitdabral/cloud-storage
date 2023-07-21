@@ -1,5 +1,5 @@
-import React,{useEffect, useLayoutEffect, useState} from 'react'
-import {Route, Routes, useNavigate} from "react-router-dom";
+import React,{useLayoutEffect, useState} from 'react'
+import {Route, Routes} from "react-router-dom";
 import Ui from '../components/ui/Ui'
 import Home from '../components/home/Home'
 import Prices from "../components/prices/Prices"
@@ -51,7 +51,7 @@ export default function AppRoutes() {
           :
             <>
               <Route exact path="/getStarted" element={<GetStarted/>}/>
-              {/* <Route exact path="/" element={<Home/>}  /> */}
+              <Route exact path="/" element={<Home/>}  />
               <Route exact path="/prices" element={<Prices/>}  />
               <Route  path="*" element={<Home/>} />
 

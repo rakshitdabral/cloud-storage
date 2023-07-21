@@ -29,6 +29,7 @@ function GetStarted() {
       const user = {'userId': resp.user.uid, 'email': resp.user.email, 'name': resp.user.displayName, 'profilePic':resp.user.photoURL}
       authDispatcher('LOGIN', user);
       localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('uId',resp.user.uid);
       navigate("/cloudo/my-cloud", {replace: true})
   }catch(err){
       console.error(err);
