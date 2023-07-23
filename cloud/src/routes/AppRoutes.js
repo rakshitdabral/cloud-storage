@@ -1,10 +1,12 @@
 import React,{useLayoutEffect, useState} from 'react'
 import {Route, Routes} from "react-router-dom";
 import Ui from '../components/ui/Ui'
+import { dataBase } from '../essential/firebase-config';
 import Home from '../components/home/Home'
 import Prices from "../components/prices/Prices"
 import GetStarted from "../components/getstarted/GetStarted";
 import {AuthContext} from '../context/AuthContext';
+
 
 export default function AppRoutes() {
   const [userAuth, setUserAuth] = useState({'userId': '', 'email':'', 'name':'', 'profilePic':'','isLoggedIn': false});
@@ -45,7 +47,7 @@ export default function AppRoutes() {
         {
           userAuth.isLoggedIn?
             <>
-              <Route path="*" element={<Ui/>} />
+              <Route path="*" element={<Ui database={dataBase}/>} />
               {/* <Route exact path="*" element={<Ui/>} /> */}
             </>
           :

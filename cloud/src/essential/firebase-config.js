@@ -3,6 +3,7 @@ import {getAuth,GoogleAuthProvider} from "firebase/auth"
 import { getStorage } from "firebase/storage";
 import {getFirestore} from "firebase/firestore"
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBkuLxo7W5fABZGC6Ah2ClPM0As51Djx1Q",
   authDomain: "cloudstorage-327c0.firebaseapp.com",
@@ -24,5 +25,4 @@ export const storage = getStorage(firebaseApp, "gs://cloudstorage-327c0.appspot.
 
 
 // Initialize Firestore database
-export const dataBase = getFirestore(app );
-
+export const dataBase = getFirestore(app);
