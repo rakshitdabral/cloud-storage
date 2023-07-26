@@ -8,7 +8,7 @@ import { signInWithEmailAndPassword,signInWithPopup} from 'firebase/auth'
 import { auth , googleProvider } from "../../essential/firebase-config";
 import {useNavigate} from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-
+import UiNavbar from "../uiNavbar/UiNavbar";
 
 function GetStarted() {
   const {authDispatcher, userAuth} = useContext(AuthContext);

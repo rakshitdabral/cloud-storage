@@ -6,12 +6,14 @@ import Home from '../components/home/Home'
 import Prices from "../components/prices/Prices"
 import GetStarted from "../components/getstarted/GetStarted";
 import {AuthContext} from '../context/AuthContext';
+import Folder from '../components/folder/Folder';
+
+
 
 
 export default function AppRoutes() {
   const [userAuth, setUserAuth] = useState({'userId': '', 'email':'', 'name':'', 'profilePic':'','isLoggedIn': false});
   // const navigate = useNavigate();
-  
   useLayoutEffect(() =>{
     let user = localStorage.getItem('user')
     if(user){
@@ -45,9 +47,18 @@ export default function AppRoutes() {
     <AuthContext.Provider value={{userAuth, authDispatcher}}>
         <Routes>
         {
-          userAuth.isLoggedIn?
+          userAuth.isLoggedIn? 
             <>
-              <Route path="*" element={<Ui database={dataBase}/>} />
+            
+              
+
+              
+
+              if(sessionStorage.getItem('folderId')==="null"){
+                <Route path="*" element={<Ui database={dataBase}/>} />
+              }else{
+                <Route path="/folder/:id" element={<Folder/>} />
+              }
               {/* <Route exact path="*" element={<Ui/>} /> */}
             </>
           :
@@ -56,7 +67,7 @@ export default function AppRoutes() {
               <Route exact path="/" element={<Home/>}  />
               <Route exact path="/prices" element={<Prices/>}  />
               <Route  path="*" element={<Home/>} />
-
+              
             </>
         }
         </Routes>

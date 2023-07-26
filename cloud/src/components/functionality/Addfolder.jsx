@@ -33,7 +33,7 @@ export default function AddFolder(){
           uid: localStorage.getItem("uId"),
           created: serverTimestamp(),
           type : 'folder',
-          
+           
         })
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {

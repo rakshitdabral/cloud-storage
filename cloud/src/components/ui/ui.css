@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +10,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     padding: 5px 20px;
     background-color: #f7f9fc;
     height: 60px;
@@ -102,7 +103,8 @@
 .ui-body-main-wrapper{
     padding: 5%;
     margin-top: 10px;
-    width: 98%;    overflow-x: hidden;
+    width: 98%; 
+    overflow-x: hidden;
     background-color:#ffffff;
     border-radius: 30px;
     height: 88vh;
@@ -122,3 +124,48 @@
 #myfile{
     align-items: center;
 }
+
+.folders-wrapper{
+    height: max-content;
+    
+}
+
+
+.folders{
+    margin-top: 20px;
+    font-size: 20px;
+    background-color: transparent;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+.folders:hover{
+    background-color:  rgb(118, 118, 118);;
+}
+
+.parent-body{
+   display: flex;
+   gap: 20px;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: start;
+}
+
+.child-body{
+    height: 100px;
+}
+
+.files{
+    margin-top: 20px;
+}
+
+.truncate {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
