@@ -44,10 +44,6 @@ function GetStarted() {
     // }
   }
 
-    useEffect(() => {
-      document.body.style.overflow = "auto";
-    },[])
-  
   return (
     <>
       <div className="container-fluid row form-ui g-0">

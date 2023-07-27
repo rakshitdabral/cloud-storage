@@ -16,6 +16,7 @@ export default function UiNavbar(){
     const logOut = async()=>{
         // localStorage.removeItem('user');
         await authDispatcher('LOGOUT')
+        document.body.style.overflow = "auto";
         navigate("/",{replace:true}); 
       }
     return(
