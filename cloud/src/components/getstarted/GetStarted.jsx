@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./getstarted.css";
 import { FcGoogle } from "react-icons/fc";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,6 +11,7 @@ import { AuthContext } from "../../context/AuthContext";
 import UiNavbar from "../uiNavbar/UiNavbar";
 
 function GetStarted() {
+  
   const {authDispatcher, userAuth} = useContext(AuthContext);
   const user = auth.currentUser;
   const [loginEmail, setLoginEmail] = useState("")
@@ -43,6 +44,9 @@ function GetStarted() {
     // }
   }
 
+    useEffect(() => {
+      document.body.style.overflow = "auto";
+    },[])
   
   return (
     <>

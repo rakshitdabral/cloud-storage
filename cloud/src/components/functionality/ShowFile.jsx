@@ -38,7 +38,7 @@ export default function ShowFile() {
       <div className="parent-body">
         { 
              Array.isArray(files) && files.map((_f,index)=>{
-              if(_f.folderId === sessionStorage.getItem("folderId")){
+              if(_f.folderId === sessionStorage.getItem("folderId") && localStorage.getItem("uId")===_f.userId){
                 return <div className="child-body " key={`files_${index}`}>
                     <a  href={_f.url} target="_blank" rel="noreferrer" className="btn  folders files truncate"><FontAwesomeIcon icon={faFile} size="xl" style={{color: "#575757",}} /> <span><span></span></span>{_f.name}</a>
                 </div>

@@ -48,9 +48,12 @@ useEffect(()=>{
         <div className="parent-body">
         {
              Array.isArray(folders) && folders.map((_f,index)=>{
-                return <div className="child-body " key={`folders_${index}`}>
+                if(localStorage.getItem("uId")===_f.uid){
+                     return <div className="child-body " key={`folders_${index}`}>
                     <button className="btn  folders truncate" onClick={()=>openFolder(_f.id)}><FontAwesomeIcon icon={faFolder} size="xl" style={{color: "#575757",}} /> <span><span></span></span>{_f.name}</button>
                 </div>
+                }
+                return null;
              })
            } 
         </div>
